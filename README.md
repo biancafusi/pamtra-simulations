@@ -8,19 +8,9 @@ This project provides a toolchain that:
 
 1. **Reads ICON meteogram data** (NetCDF format) containing atmospheric profiles.
 2. **Simulates the MIRA-35 cloud radar** (35.5 GHz) operated by the TROPOS group in Invercargill, New Zealand, using the PAMTRA radiative transfer model.
-3. **Visualizes the simulated radar moments** (reflectivity, Doppler velocity, spectral width, and linear depolarization ratio) as time-height cross-sections.
+3. **Visualizes the simulated radar moments - work in progress** (reflectivity, Doppler velocity, spectral width, and linear depolarization ratio) as time-height cross-sections.
 
 The goal is to produce a modular Python tool that separates these three stages: data validation, PAMTRA simulation, and visualization.
-
-## Current Files
-
-| File | Description |
-|------|-------------|
-| `icon2pamtra_mira.py` | Converts ICON meteogram data to MIRA-35 PAMTRA simulations. Supports 1-moment and 2-moment microphysics schemes. |
-| `pamtra_earthcare_track.py` | PAMTRA simulation script for EarthCARE satellite tracks. |
-| `icon2PAMTRA_1mm_v2.ipynb` | Jupyter notebook with the original ICON-to-PAMTRA conversion workflow. |
-| `mira35_quicklooks.ipynb` | Generates daily quicklook plots of simulated radar moments (Z, V, SW, LDR). |
-| `35GHzcloudradarMira.md` | Configuration notes for the MIRA-35 radar parameters in PAMTRA. |
 
 ## Dependencies
 
@@ -49,19 +39,9 @@ Then install PAMTRA itself:
 pip install pamtra
 ```
 
-## Usage
-
-The workflow is still under development. The intended structure is:
-
-1. **Validate** — check that ICON meteogram files are present and well-formed.
-2. **Simulate** — run PAMTRA to generate MIRA-35 radar moments from the meteogram data.
-3. **Visualize** — produce quicklook plots of the simulated radar moments.
-
-For now, run `icon2pamtra_mira.py` to perform the full ICON-to-PAMTRA conversion, then use `mira35_quicklooks.ipynb` to visualize the results.
-
 ## License
 
-This project is part of academic research conducted at the University of Hamburg (TROPOS group).
+This project is part of academic research conducted at the University of Frankfurt (Goethe Universität).
 
 ## References
 
@@ -72,4 +52,3 @@ This project is part of academic research conducted at the University of Hamburg
 ## Contact
 
 For questions or collaboration, please reach out to the author, Bianca Fusinato.
-# pamtra-simulations
